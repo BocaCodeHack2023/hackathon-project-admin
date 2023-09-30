@@ -34,13 +34,13 @@ export default function EmployeeTable({ employeeList }) {
                 
                 {/* Map through employeeList and display each employee as a row in the table */}
                 {searchQuery === "" 
-                  ? (Object.keys(employeeList).map((employee, index) => (
+                  ? (employeeList.map((employee, index) => (
                     <tr key={index}>
                       <th scope="row">{employee.employee_id}</th>
                       <td className='employeeTableRow'>{employee.name}</td>
                       <td className='employeeTableRow'>{employee.last_name}</td>
                       <td className='employeeTableRow'>{employee.phone}</td>
-                      <td className='employeeTableRow'><a href={`/dashboard/${employee._id}`}>Details</a></td>
+                      <td className='employeeTableRow'><a href={`/dashboard/${employee.employee_id}`}>Details</a></td>
                     </tr>
                   )))
                   
