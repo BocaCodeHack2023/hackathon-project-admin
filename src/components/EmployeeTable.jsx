@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import '../styles/employeeTable.css'
+import Sidebar from './Sidebar.jsx';
 
 export default function EmployeeTable({ employeeList }) {
   const [searchQuery, setSearchQuery] = useState("");
 
     return (
-      <>      
+      <> 
+        <Sidebar />
         <div className="d-flex justify-content-center">
           <div className="tableComplete">
             <div className="d-flex justify-content-between">
-              <input type='text' placeholder='Search Employee' onChange={(e) => setSearchQuery(e.target.value)}/>
-              <button>Add +</button>
+              <input className='searchBox' type='text' placeholder='Search' onChange={(e) => setSearchQuery(e.target.value)}/>
+              <button className='btn btn-primary'>Add +</button>
             </div>
             <table className="table employeeTable">
               <thead>
