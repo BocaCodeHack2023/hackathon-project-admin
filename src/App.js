@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/login';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { createContext, useState } from 'react';
+import EmployeeProfile from './pages/EmployeeProfile';
 
 export const UserContext = createContext({})
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/:employeeid" element={<EmployeeProfile />} />
         {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
     </BrowserRouter>
