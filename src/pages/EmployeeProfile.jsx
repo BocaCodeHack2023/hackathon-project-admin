@@ -26,7 +26,6 @@ export default function EmployeeProfile() {
 
   const formattedDate = `${month}/${day}/${year}`;
 
-  console.log(formattedDate);
   return (
 
     <>
