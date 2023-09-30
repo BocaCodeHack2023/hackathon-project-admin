@@ -6,6 +6,7 @@ export default function EmployeeTable({ employeeList }) {
 
     return (
       <> 
+        <h1 className="dashboardTitle">Welcome, (admin name)</h1>
         <div className="d-flex justify-content-center mt-5">
           <div className="tableComplete">
             <div className="d-flex justify-content-between">
@@ -22,14 +23,14 @@ export default function EmployeeTable({ employeeList }) {
                 </tr>
               </thead>
               <tbody>
-                {/* Placeholder info */}
+                {/* Placeholder info
                   <tr>
                       <th scope="row">1</th>
                       <td className='employeeTableRow'>Lorenzo</td>
                       <td className='employeeTableRow'>Mokwa</td>
                       <td className='employeeTableRow'>1234567</td>
                       <td className='employeeTableRow'><a href="/dashboard/1234">Details</a></td>
-                    </tr>
+                    </tr> */}
                 
                 {/* Map through employeeList and display each employee as a row in the table */}
                 {searchQuery === "" 
