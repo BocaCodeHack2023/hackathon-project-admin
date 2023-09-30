@@ -11,11 +11,22 @@ export default function LoginPage() {
   }
 
   return (
-    <div className='bg-light'>
-      <div className="d-flex flex-row flex-wrap justify-content-center">
+    <div style={{
+      display: 'flex',
+      flexDirection: 'row',
+      
+    }}>
+      <div className="d-flex flex-row flex-wrap justify-content-center bg-light"
+      style={{
+        height: "100vh",
+        width: "40vw"
+      }}>
        
 
-        <Form>
+        <Form 
+        style={{
+          marginTop: "25vh"
+        }}>
         <h2 className='d-flex justify-content-center'>Login</h2>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
         <Form.Label column sm={2}>
@@ -39,6 +50,11 @@ export default function LoginPage() {
       </Form.Group>
       </Form>
       </div>
+      <img src='images/awarness-ribbons.webp'  
+      style={{
+        width: "60vw",
+        height: "100vh"
+      }}/>
     </div>
   )
 }
