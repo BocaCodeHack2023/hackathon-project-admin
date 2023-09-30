@@ -23,8 +23,25 @@ export default function EmployeeProfile() {
         month: "7",
         day: "24",
         year: "2023"
+      },
+    },
+    screenings: 
+    [
+      {
+        location: "Saint Jude's Hospital", 
+        address: {
+          streetNumber: "262 Danny Thomas Place",
+          city: "Memphis", 
+          state: "TN",  
+          Zip: "38105"
+        },
+        date: {
+          month: "09",
+          day: "26",
+          year: "2022"
+        },
       }
-    }
+    ]
 
 
   }
@@ -64,7 +81,19 @@ export default function EmployeeProfile() {
 
       </Container>
 
-      {/* Add screening history with location and time as components to map through */}
+      <h1> History</h1>
+      {employee.screenings.map(data => (
+        <Container>
+          <Row>
+         <Col> <p>{data.location}</p></Col>
+         <Col> <p className="text-end">date: {data.date.month}/{data.date.day}/{data.date.year}</p></Col>
+          </Row>
+          <Row>
+            <Col><p>{data.address.streetNumber} {data.address.city}, {data.address.state}, {data.address.Zip}</p></Col>
+          </Row>
+        </Container>
+        
+        ))}
     </>
   )
 }
