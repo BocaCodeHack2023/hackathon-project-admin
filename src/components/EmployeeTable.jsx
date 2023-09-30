@@ -50,7 +50,7 @@ export default function EmployeeTable({ employeeList }) {
                       <td className='employeeTableRow'>{employee.name}</td>
                       <td className='employeeTableRow'>{employee.last_name}</td>
                       <td className='employeeTableRow'>{employee.phone}</td>
-                      <td className='employeeTableRow'><a href={`/dashboard/${employee._id}`}>Details</a></td>
+                      <td className='employeeTableRow'><a href={`/dashboard/${employee.employee_id}`}>Details</a></td>
                     </tr>
                   )))
                   
