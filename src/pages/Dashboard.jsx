@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar.jsx";
 import "../styles/dashboard.css";
 
 export default function Dashboard() {
-  const [employeeList, setEmployeeList] = useState({});
+  const [employeeList, setEmployeeList] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {

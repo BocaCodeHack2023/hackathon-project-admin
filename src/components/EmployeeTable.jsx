@@ -4,6 +4,16 @@ import '../styles/dashboard.css'
 export default function EmployeeTable({ employeeList }) {
   const [searchQuery, setSearchQuery] = useState("");
 
+    fetch(`https://harmless-cod-stirring.ngrok-free.app/api/v1/admin/users/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setEmployeeList(data));
+  }
+
     return (
       <> 
         <h1 className="dashboardTitle">Welcome, (admin name)</h1>
@@ -34,7 +44,7 @@ export default function EmployeeTable({ employeeList }) {
                 
                 {/* Map through employeeList and display each employee as a row in the table */}
                 {searchQuery === "" 
-                  ? (Object.keys(employeeList).map((employee, index) => (
+                  ? (employeeList.map((employee, index) => (
                     <tr key={index}>
                       <th scope="row">{employee.employee_id}</th>
                       <td className='employeeTableRow'>{employee.name}</td>
@@ -47,11 +57,12 @@ export default function EmployeeTable({ employeeList }) {
                   // If searchQuery is not empty, filter the employeeList and display the filtered list
                   : (employeeList.filter(employee => employee.firstName.toLowerCase().includes(searchQuery.toLowerCase())).map((employee, index) => (
                     <tr key={index}>
+                      {console.log(employee)}
                       <th scope="row">{employee.id}</th>
                       <td>{employee.firstName}</td>
                       <td>{employee.lastName}</td>
                       <td>{employee.phone}</td>
-                      <td><a href={`/dashboard/${employee.id}`}>Details</a></td>
+                      <td><a href={`/dashboard/${employee._id}`}>Details</a></td>
                     </tr>
                   )))
                   }
@@ -61,4 +72,3 @@ export default function EmployeeTable({ employeeList }) {
         </div>
       </>
     );
-}
