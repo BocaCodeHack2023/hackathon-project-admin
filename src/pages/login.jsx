@@ -16,10 +16,16 @@ export default function LoginPage() {
       flexDirection: 'row',
       
     }}>
+      <img src='images/awarness-ribbons.webp'  
+      style={{
+        
+        width: "50vw",
+        height: "100vh"
+      }}/>
       <div className="d-flex flex-row flex-wrap justify-content-center bg-light"
       style={{
         height: "100vh",
-        width: "40vw"
+        width: "50vw"
       }}>
        
 
@@ -50,11 +56,7 @@ export default function LoginPage() {
       </Form.Group>
       </Form>
       </div>
-      <img src='images/awarness-ribbons.webp'  
-      style={{
-        width: "60vw",
-        height: "100vh"
-      }}/>
+      
     </div>
   )
 }
