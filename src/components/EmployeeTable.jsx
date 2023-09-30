@@ -22,6 +22,7 @@ export default function EmployeeTable({ employeeList }) {
                 </tr>
               </thead>
               <tbody>
+                {/* Placeholder info */}
                   <tr>
                       <th scope="row">1</th>
                       <td className='employeeTableRow'>Lorenzo</td>
@@ -29,6 +30,8 @@ export default function EmployeeTable({ employeeList }) {
                       <td className='employeeTableRow'>1234567</td>
                       <td className='employeeTableRow'><a href="/dashboard/1234">Details</a></td>
                     </tr>
+                
+                {/* Map through employeeList and display each employee as a row in the table */}
                 {searchQuery === "" 
                   ? (employeeList.map((employee, index) => (
                     <tr key={index}>
@@ -39,6 +42,8 @@ export default function EmployeeTable({ employeeList }) {
                       <td className='employeeTableRow'><a href={`/dashboard/${employee.id}`}>Details</a></td>
                     </tr>
                   )))
+                  
+                  // If searchQuery is not empty, filter the employeeList and display the filtered list
                   : (employeeList.filter(employee => employee.firstName.toLowerCase().includes(searchQuery.toLowerCase())).map((employee, index) => (
                     <tr key={index}>
                       <th scope="row">{employee.id}</th>
