@@ -1,15 +1,17 @@
-import { Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/App.css';
-import Dashboard from './components/Dashboard';
+import Dashboard from './pages/Dashboard';
+import LoginPage from './pages/login';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
