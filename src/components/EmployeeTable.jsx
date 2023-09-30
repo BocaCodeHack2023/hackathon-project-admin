@@ -7,9 +7,12 @@ export default function EmployeeTable({ employeeList }) {
     return (
       <>      
         <div className="d-flex justify-content-center">
-          <div className="">
-            <input type='text' placeholder='Search Employee' onChange={(e) => setSearchQuery(e.target.value)}/>
-            <table className="table employeeTable mt-5">
+          <div className="tableComplete">
+            <div className="d-flex justify-content-between">
+              <input type='text' placeholder='Search Employee' onChange={(e) => setSearchQuery(e.target.value)}/>
+              <button>Add +</button>
+            </div>
+            <table className="table employeeTable">
               <thead>
                 <tr>
                   <th scope="col">Id</th>
@@ -19,14 +22,21 @@ export default function EmployeeTable({ employeeList }) {
                 </tr>
               </thead>
               <tbody>
+                  <tr>
+                      <th scope="row">1</th>
+                      <td className='employeeTableRow'>Lorenzo</td>
+                      <td className='employeeTableRow'>Mokwa</td>
+                      <td className='employeeTableRow'>1234567</td>
+                      <td className='employeeTableRow'><a href="">Details</a></td>
+                    </tr>
                 {searchQuery === "" 
                   ? (employeeList.map((employee, index) => (
                     <tr key={index}>
                       <th scope="row">{employee.id}</th>
-                      <td>{employee.firstName}</td>
-                      <td>{employee.lastName}</td>
-                      <td>{employee.phone}</td>
-                      <td><a href='/:employee'>Details</a></td>
+                      <td className='employeeTableRow'>{employee.firstName}</td>
+                      <td className='employeeTableRow'>{employee.lastName}</td>
+                      <td className='employeeTableRow'>{employee.phone}</td>
+                      <td className='employeeTableRow'><a href={`/dashboard/${employee.id}`}>Details</a></td>
                     </tr>
                   )))
                   : (employeeList.filter(employee => employee.firstName.toLowerCase().includes(searchQuery.toLowerCase())).map((employee, index) => (
@@ -35,7 +45,7 @@ export default function EmployeeTable({ employeeList }) {
                       <td>{employee.firstName}</td>
                       <td>{employee.lastName}</td>
                       <td>{employee.phone}</td>
-                      <td><a href='/:employee'>Details</a></td>
+                      <td><a href={`/dashboard/${employee.id}`}>Details</a></td>
                     </tr>
                   )))
                   }

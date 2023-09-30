@@ -1,6 +1,20 @@
 .employeeTable {
-    width: 50%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
+    width: 100%;
+    border: 5px solid rgb(203, 203, 203);
     font-size: 18px;
+    overflow-x: auto;
+}
+
+.tableComplete {
+    min-width: 50%;
+    width: 500px;
+}
+
+@media (max-width: 576px) {
+    .employeeTable {
+        width: 10px;
+    }
+    .tableComplete {
+        min-width: 80vw;
+    }
 }
