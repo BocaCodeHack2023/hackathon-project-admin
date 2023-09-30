@@ -1,7 +1,8 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Dashboard from './pages/Dashboard.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from './pages/Dashboard';
+import LoginPage from './pages/login';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { createContext, useState } from 'react';
 
 export const UserContext = createContext({})
@@ -12,8 +13,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
     </BrowserRouter>
   );
