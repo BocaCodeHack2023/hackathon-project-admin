@@ -81,19 +81,6 @@ export default function EmployeeProfile() {
 
       </Container>
 
-      <h1> History</h1>
-      {employee.screenings.map(data => (
-        <Container>
-          <Row>
-         <Col> <p>{data.location}</p></Col>
-         <Col> <p className="text-end">date: {data.date.month}/{data.date.day}/{data.date.year}</p></Col>
-          </Row>
-          <Row>
-            <Col><p>{data.address.streetNumber} {data.address.city}, {data.address.state}, {data.address.Zip}</p></Col>
-          </Row>
-        </Container>
-        
-        ))}
     </>
   )
 }
