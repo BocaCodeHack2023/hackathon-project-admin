@@ -36,6 +36,18 @@
   margin-bottom: 10px;
 }
 
+.dashboardTitle {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.marginHidden {
+  margin: 0px;
+}
+
 @media (max-width: 576px) {
   .employeeTable {
       width: 10px;

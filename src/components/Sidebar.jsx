@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import '../styles/sidebar.css';
 
-export default function Sidebar() {
-  const [showSidebar, setShowSidebar] = useState(false);
+export default function Sidebar( { setShowSidebar, showSidebar }) {
+  
 
   return(
     <>      
