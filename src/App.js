@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { createContext, useState } from 'react';
 import EmployeeProfile from './pages/EmployeeProfile';
 
-export const UserContext = createContext({})
 
 function App() {
   const [ user, setUserState ] = useState()
