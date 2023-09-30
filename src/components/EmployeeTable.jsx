@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import '../styles/employeeTable.css'
-import Sidebar from './Sidebar.jsx';
 
 export default function EmployeeTable({ employeeList }) {
   const [searchQuery, setSearchQuery] = useState("");
 
     return (
       <> 
-        <Sidebar />
         <div className="d-flex justify-content-center">
           <div className="tableComplete">
             <div className="d-flex justify-content-between">
