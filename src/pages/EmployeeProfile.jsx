@@ -23,8 +23,25 @@ export default function EmployeeProfile() {
         month: "7",
         day: "24",
         year: "2023"
+      },
+    },
+    screenings: 
+    [
+      {
+        location: "Saint Jude's Hospital", 
+        address: {
+          streetNumber: "262 Danny Thomas Place",
+          city: "Memphis", 
+          state: "TN",  
+          Zip: "38105"
+        },
+        date: {
+          month: "09",
+          day: "26",
+          year: "2022"
+        },
       }
-    }
+    ]
 
 
   }
@@ -64,7 +81,6 @@ export default function EmployeeProfile() {
 
       </Container>
 
-      {/* Add screening history with location and time as components to map through */}
     </>
   )
 }
