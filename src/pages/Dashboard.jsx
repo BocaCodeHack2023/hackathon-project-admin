@@ -1,8 +1,9 @@
 import { useState } from "react";
 import EmployeeTable from "../components/EmployeeTable";
+import { employeeList } from "../data";
 
 export default function Dashboard() {
-  const [employeeList, setEmployeeList] = useState([]);
+  // const [employeeList, setEmployeeList] = useState([]);
 
   return (
     <>

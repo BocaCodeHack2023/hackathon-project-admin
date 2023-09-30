@@ -35,11 +35,11 @@ export default function EmployeeTable({ employeeList }) {
                 {searchQuery === "" 
                   ? (employeeList.map((employee, index) => (
                     <tr key={index}>
-                      <th scope="row">{employee.id}</th>
-                      <td className='employeeTableRow'>{employee.firstName}</td>
-                      <td className='employeeTableRow'>{employee.lastName}</td>
+                      <th scope="row">{employee.employee_id}</th>
+                      <td className='employeeTableRow'>{employee.name}</td>
+                      <td className='employeeTableRow'>{employee.last_name}</td>
                       <td className='employeeTableRow'>{employee.phone}</td>
-                      <td className='employeeTableRow'><a href={`/dashboard/${employee.id}`}>Details</a></td>
+                      <td className='employeeTableRow'><a href={`/dashboard/${employee.employee_id}`}>Details</a></td>
                     </tr>
                   )))
                   
