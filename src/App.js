@@ -3,8 +3,13 @@ import './styles/App.css';
 import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/login';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { createContext, useState } from 'react';
+
+export const UserContext = createContext({})
 
 function App() {
+  const [ user, setUserState ] = useState()
+
   return (
     <BrowserRouter>
       <Routes>

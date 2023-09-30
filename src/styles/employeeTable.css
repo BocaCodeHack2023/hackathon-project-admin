@@ -1,0 +1,6 @@
+.employeeTable {
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
