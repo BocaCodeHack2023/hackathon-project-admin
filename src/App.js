@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/:employeeid" element={<EmployeeProfile />} />
+        <Route path="/dashboard/:employeeId" element={<EmployeeProfile />} />
         {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
     </BrowserRouter>

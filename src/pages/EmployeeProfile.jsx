@@ -1,8 +1,21 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap"
-import { employeeList } from "../data"
 
 export default function EmployeeProfile() {
-  const employee = employeeList[0]
+  const { employeeId } = useParams();
+  const [employee, setEmployee] = useState([]);
+  
+  useEffect(() => {
+    fetch(`https://harmless-cod-stirring.ngrok-free.app/api/v1/admin/users/${employeeId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setEmployee(data));
+  }, [employeeId]);
 
   const originalDateString = employee.dob;
   const date = new Date(originalDateString);
