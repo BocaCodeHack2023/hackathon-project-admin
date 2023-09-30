@@ -6,7 +6,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <h1>Welcome, (admin name)</h1>
+      <h1 className="dashboardTitle">Welcome, (admin name)</h1>
       <EmployeeTable employeeList={employeeList}/>
     </>
   );

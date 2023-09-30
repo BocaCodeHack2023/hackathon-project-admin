@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
-import '../styles/employeeTable.css'
+import '../styles/dashboard.css'
 
 export default function EmployeeTable({ employeeList }) {
   const [searchQuery, setSearchQuery] = useState("");
 
     return (
       <> 
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-5">
           <div className="tableComplete">
             <div className="d-flex justify-content-between">
               <input className='searchBox' type='text' placeholder='Search' onChange={(e) => setSearchQuery(e.target.value)}/>
-              <button className='btn btn-primary'>Add +</button>
+              <button className='addButton'>Add +</button>
             </div>
             <table className="table employeeTable">
               <thead>
@@ -27,7 +27,7 @@ export default function EmployeeTable({ employeeList }) {
                       <td className='employeeTableRow'>Lorenzo</td>
                       <td className='employeeTableRow'>Mokwa</td>
                       <td className='employeeTableRow'>1234567</td>
-                      <td className='employeeTableRow'><a href="">Details</a></td>
+                      <td className='employeeTableRow'><a href="/dashboard/1234">Details</a></td>
                     </tr>
                 {searchQuery === "" 
                   ? (employeeList.map((employee, index) => (
