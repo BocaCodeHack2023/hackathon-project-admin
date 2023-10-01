@@ -9,7 +9,7 @@ import '../styles/dashboard.css';
 
 export default function NewEmployeeModal({ handleOpen, handleClose, setEmployeeList }) {
   const [formData, setFormData] = useState({
-    company_id: "65187f25a4df9ce3628fc873",
+    company_id: "65187f25a4df9ce3628fc873"
   });
 
   const updateForm = (e) => {
@@ -36,64 +36,67 @@ export default function NewEmployeeModal({ handleOpen, handleClose, setEmployeeL
 
         <Modal.Body>
         <form id='new-employee'>
-          <div class="form-group">
-            <label for="First Name">First Name</label>
-            <input name="name" onChange={updateForm} type="text" class="form-control" aria-describedby="emailHelp" placeholder="First Name" />
+          <div>
+            <div className="form-group">
+              <label for="First Name">First Name</label>
+              <input id="name" onChange={updateForm} type="text" className="form-control" aria-describedby="emailHelp" placeholder="First Name" />
+            </div>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Last Name</label>
-            <input name="last_name" onChange={updateForm} type="text" class="form-control" placeholder="Last Name" />
+            <input id="last_name" onChange={updateForm} type="text" className="form-control" placeholder="Last Name" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Employee Id</label>
-            <input name="employee_id" onChange={updateForm} type="password" class="form-control" placeholder="Id" />
+            <input id="employee_id" onChange={updateForm} type="text" className="form-control" placeholder="Employee Id" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Email</label>
-            <input name="email" onChange={updateForm} type="email" class="form-control" placeholder="Email" />
+            <input id="email" onChange={updateForm} type="email" className="form-control" placeholder="Email" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Phone Number</label>
-            <input name="phone" onChange={updateForm} type="text" class="form-control" placeholder="Phone" />
+            <input id="phone" onChange={updateForm} type="text" className="form-control" placeholder="Phone" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Address</label>
-            <input name="address_street" onChange={updateForm} type="text" class="form-control" placeholder="Phone" />
+            <input id="address_street" onChange={updateForm} type="text" className="form-control" placeholder="Address" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>City</label>
-            <input name="address_street" onChange={updateForm} type="text" class="form-control" placeholder="Phone" />
+            <input id="address_city" onChange={updateForm} type="text" className="form-control" placeholder="City" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>State</label>
-            <select name='state' onChange={updateForm} class='form-control'>
+            <select id='address_state' onChange={updateForm} className='form-control'>
               <option value="select" disabled>Select</option>
               {Object.entries(stateInitials).map(([stateName, stateAbbreviation]) => (
                 <option value={stateAbbreviation}>{stateName}</option>
               ))}
             </select>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Zip Code</label>
-            <input name="address_street" onChange={updateForm} type="text" class="form-control" placeholder="Phone" />
+            <input id="address_zip" onChange={updateForm} type="text" className="form-control" placeholder="Phone" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Date of Birth</label>
-            <input name="dob" onChange={updateForm} type="date" class="form-control" placeholder="Date of Birth" />
+            <input id="dob" onChange={updateForm} type="date" className="form-control" placeholder="Date of Birth" />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Sex</label>
-            <select name='gender' onChange={updateForm} class="form-control" >
+            <select id='gender' onChange={updateForm} className="form-control" >
               <option value="select" disabled>Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Insurance Provider</label>
-            <input name="insurance_provider" onChange={updateForm} type="password" class="form-control" placeholder="Insurance" />
+            <input id="insurance_provider" onChange={updateForm} type="text" className="form-control" placeholder="Insurance Provider" />
           </div>
         </form>
+        {console.log(formData)}
         </Modal.Body>
 
         <Modal.Footer>
@@ -101,5 +104,7 @@ export default function NewEmployeeModal({ handleOpen, handleClose, setEmployeeL
           <Button variant="primary" onClick={handleSubmit} form='new-employee'>Add</Button>
         </Modal.Footer>
       </Modal>
+      
   );
 }
+
