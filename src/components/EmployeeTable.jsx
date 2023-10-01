@@ -76,7 +76,7 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
           </table>
         </div>
       </div>
-      {open && <NewEmployeeModal handleOpen={handleOpen} handleClose={handleClose}/> }
+      {open && <NewEmployeeModal handleOpen={handleOpen} handleClose={handleClose} setEmployeeList={setEmployeeList}/> }
     </>
   )
 }
