@@ -42,7 +42,7 @@ export default function Login() {
   };
 
   return (
-    <Container fluid className="h-100">
+    <Container id="loginbg" fluid className="h-100">
       <Row className="h-100">
         <Col sm="12" md="8" className="p-0 d-flex">
           <img
@@ -51,11 +51,11 @@ export default function Login() {
           />
         </Col>
 
-        <Col sm="12" md="4" className="p-0 d-flex">
-          <div className="d-flex justify-content-center align-items-center w-100 login-container">
+        <Col  sm="12" md="4" className="p-0 d-flex">
+          <div  className="d-flex justify-content-center align-items-center w-100 login-container">
             <div className="w-75">
 
-              <Card>
+              <Card id='loginForm'>
                 <Card.Body>
                   <Form onSubmit={createSession}>
                     <Form.Group className="mb-3">

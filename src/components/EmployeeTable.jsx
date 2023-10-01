@@ -58,18 +58,23 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
                         <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
                       </tr>
                     ))
-                  : employeeList
-                      .filter((employee) =>
-                        employee.name.toLowerCase().includes(searchQuery.toLowerCase())
-                      )
-                      .map((employee, index) => (
-                        <tr key={index}>
-                          <th scope="row">{employee.employee_id}</th>
-                          <td className='employeeTableRow'>{employee.name}</td>
-                          <td className='employeeTableRow'>{employee.last_name}</td>
-                          <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
-                        </tr>
-                      ))}
+                    : (employeeList.filter(employee => employee.name.toLowerCase().includes(searchQuery.toLowerCase())).length > 0
+                    ? (employeeList.filter(employee => employee.name.toLowerCase().includes(searchQuery.toLowerCase())).map((employee, index) => (
+                      <tr key={index}>
+                        {console.log(employee)}
+                        <th scope="row">{employee.employee_id}</th>
+                        <td>{employee.name}</td>
+                        <td>{employee.last_name}</td>
+                        <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
+
+                      </tr>)))
+                    : (
+                      <tr>
+                        <td colSpan="5">No employee found</td>
+                      </tr>
+                    )
+                  )
+                }
               </tbody>
             </table>
           </div>
