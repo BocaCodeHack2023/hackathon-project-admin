@@ -23,8 +23,6 @@ export default function NewEmployeeModal({ handleOpen, handleClose, setEmployeeL
       method: "POST",
       data: formData,
     })
-      .then((res) => res.data)
-      .then((data) => setEmployeeList(data));
       handleClose();
   }
 
