@@ -18,8 +18,8 @@ function App() {
 
         <Route path="/reports" element={<Reports showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
 
-        <Route path="/employees" element={<Login />} />
-        <Route path="/employees/:employeeId" element={<Employees showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
+        <Route path="/employees" element={<Employees showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
+        <Route path="/employees/:employeeId" element={<EmployeeProfile showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
       </Routes>
     </BrowserRouter>
   );

@@ -14,6 +14,16 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
     setOpen(false);
   };
 
+  function formatDate(inputDate) {
+    const date = new Date(inputDate);
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${month}/${day}/${year}`;
+  }
+
   return (
     <>
       <h1 className="dashboardTitle">Welcome, Idan</h1>
@@ -35,9 +45,8 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
               <thead>
                 <tr>
                   <th scope="col">Id</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Last Name</th>
-                  <th scope="col">Phone</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Last Screening</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,11 +54,9 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
                   ? employeeList.map((employee, index) => (
                       <tr key={index}>
                         <th scope="row">{employee.employee_id}</th>
-                        <td className='employeeTableRow'>{employee.name}</td>
-                        <td className='employeeTableRow'>{employee.last_name}</td>
-                        <td className='employeeTableRow'>{employee.phone}</td>
+                        <td className='employeeTableRow'>{employee.name} {employee.last_name}</td>
+                        <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
                         <td className='employeeTableRow'>
-                          <a href={`/dashboard/${employee._id}`}>Details</a>
                         </td>
                       </tr>
                     ))
@@ -62,7 +69,7 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
                           <th scope="row">{employee.employee_id}</th>
                           <td className='employeeTableRow'>{employee.name}</td>
                           <td className='employeeTableRow'>{employee.last_name}</td>
-                          <td className='employeeTableRow'>{employee.phone}</td>
+                          <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
                           <td className='employeeTableRow'>
                             <a href={`/dashboard/${employee._id}`}>Details</a>
                           </td>
