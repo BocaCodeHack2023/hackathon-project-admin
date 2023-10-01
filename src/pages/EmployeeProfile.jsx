@@ -20,7 +20,7 @@ export default function EmployeeProfile() {
     })
       .then((response) => response.json())
       .then((data) => setEmployee(data));
-  }, [employeeId]);
+  }, []);
 
   const originalDateString = employee.dob;
   const date = new Date(originalDateString);

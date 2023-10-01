@@ -14,7 +14,7 @@ export default function Dashboard({ showSidebar, setShowSidebar }) {
     })
       .then((res) => res.data)
       .then((data) => setEmployeeList(data));
-  }, [employeeList]);
+  }, []);
 
   return (
     <>
