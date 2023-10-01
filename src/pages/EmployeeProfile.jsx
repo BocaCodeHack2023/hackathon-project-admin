@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap"
+import '../styles/employeeProfile.css';
 import Sidebar from "../components/Sidebar";
 import HTTP from "../utils/http";
 
-export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
+
+export default function EmployeeProfile() {
   const { employeeId } = useParams();
   const [employee, setEmployee] = useState([]);
-  
+  const [showSidebar, setShowSidebar] = useState(false);
+
+
   useEffect(() => {
     HTTP({
       url: `/users/${employeeId}`,
@@ -28,9 +32,12 @@ export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
 
   return (
 
-    <>
-      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
-      <div className="d-flex flex-row mb-4">
+    <section id="profilePage">
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+
+
+
+      <div className="d-flex flex-row">
         <h2 className="w-50 m-4">Name: {employee.name} {employee.last_name}</h2>
         <h2 className="w-50 text-end m-4">Employee ID: {employee.employee_id}</h2>
       </div>
@@ -58,6 +65,6 @@ export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
 
       </Container>
 
-    </>
+    </section>
   )
 }
