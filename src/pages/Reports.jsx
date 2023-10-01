@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import HTTP from "../utils/http";
 import Sidebar from "../components/Sidebar";
 
+import "../styles/dashboard.css";
+
 export default function Reports({ showSidebar, setShowSidebar }) {
   const [screenings, setScreenings] = useState([]);
   const [users, setUsers] = useState({});
@@ -50,11 +52,11 @@ export default function Reports({ showSidebar, setShowSidebar }) {
   return (
     <>
       <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-      <h1>Reports</h1>
+      <h1 className="page-title mt-5">Reports</h1>
 
       {/* Upcoming Screenings */}
-      <h2>Upcoming</h2>
-      <div className="row m-5">
+      <h2 className="section-title mt-5">Upcoming</h2>
+      <div className="row card-grid">
         {upcomingScreenings.map((screening, index) => (
           <div className="col-md-4 mb-4" key={index}>
             <div className="card" style={{ width: "18em" }}>
@@ -80,8 +82,8 @@ export default function Reports({ showSidebar, setShowSidebar }) {
       </div>
 
       {/* Completed Screenings */}
-      <h2>Completed</h2>
-      <div className="row m-5">
+      <h2 className="section-title">Completed</h2>
+      <div className="row card-grid">
         {screenings
           .filter((screening) => screening.status === "completed")
           .map((screening, index) => (
