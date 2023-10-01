@@ -27,7 +27,6 @@ export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
 
   const formattedDate = `${month}/${day}/${year}`;
 
-  console.log(formattedDate);
   return (
 
     <>
