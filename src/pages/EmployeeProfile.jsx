@@ -5,14 +5,14 @@ import '../styles/employeeProfile.css';
 import Sidebar from "../components/Sidebar";
 
 
-export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
+export default function EmployeeProfile() {
   const { employeeId } = useParams();
   const [employee, setEmployee] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false);
 
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${employeeId}`, {
+    fetch(`https://harmless-cod-stirring.ngrok-free.app/api/v1/admin/users/${employeeId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -34,9 +34,11 @@ export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
   return (
 
     <section id="profilePage">
-    
       <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-      <div className="d-flex flex-row mb-4">
+
+
+
+      <div className="d-flex flex-row">
         <h2 className="w-50 m-4">Name: {employee.name} {employee.last_name}</h2>
         <h2 className="w-50 text-end m-4">Employee ID: {employee.employee_id}</h2>
       </div>
