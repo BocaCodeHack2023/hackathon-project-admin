@@ -9,13 +9,14 @@ import EmployeeProfile from './pages/EmployeeProfile';
 
 function App() {
   const [ user, setUserState ] = useState()
+  const [showSidebar, setShowSidebar] = useState(false);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/:employeeId" element={<EmployeeProfile />} />
+        <Route path="/dashboard" element={<Dashboard showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>} />
+        <Route path="/dashboard/:employeeId" element={<EmployeeProfile showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
         {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
     </BrowserRouter>

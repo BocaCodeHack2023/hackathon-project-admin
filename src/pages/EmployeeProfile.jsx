@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap"
+import Sidebar from "../components/Sidebar";
 
-export default function EmployeeProfile() {
+export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
   const { employeeId } = useParams();
   const [employee, setEmployee] = useState([]);
   
   useEffect(() => {
-    fetch(`https://harmless-cod-stirring.ngrok-free.app/api/v1/admin/users/${employeeId}`, {
+    fetch(`${process.env.REACT_APP_ENDPOINT}/users/${employeeId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +31,7 @@ export default function EmployeeProfile() {
   return (
 
     <>
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
       <div className="d-flex flex-row mb-4">
         <h2 className="w-50 m-4">Name: {employee.name} {employee.last_name}</h2>
         <h2 className="w-50 text-end m-4">Employee ID: {employee.employee_id}</h2>

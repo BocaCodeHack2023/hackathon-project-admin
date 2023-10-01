@@ -5,7 +5,7 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch(`https://harmless-cod-stirring.ngrok-free.app/api/v1/admin/users/`, {
+    fetch(`${process.env.REACT_APP_ENDPOINT}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
