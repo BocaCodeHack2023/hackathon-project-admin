@@ -8,7 +8,7 @@ export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
   const [employee, setEmployee] = useState([]);
   
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_ENDPOINT}/users/${employeeId}`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${employeeId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
