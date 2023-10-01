@@ -18,7 +18,7 @@ export default function LoginPage() {
     <Container fluid id='loginbg' className='h-100'>
       <Row className='h-100'>
         <Col sm="12" md="8" className='p-0 d-flex'>
-          <img className='w-100' src='https://www.chcfl.org/wp-content/uploads/2015/12/American-Cancer-Society.jpg' />
+          <img className='w-100' id='loginImg' src='https://www.chcfl.org/wp-content/uploads/2015/12/American-Cancer-Society.jpg' />
         </Col>
         <Col sm="12" md="4" className='p-0 d-flex'>
           <div className="d-flex justify-content-center align-items-center w-100">

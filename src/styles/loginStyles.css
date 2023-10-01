@@ -9,3 +9,18 @@
   padding: 2vw;
   border-radius: 3%;
 }
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 992px) {
+  #loginImg{
+    position: absolute;
+    height: 100vh;
+  }
+  #loginForm{
+    background-color: #f9f9f9dd;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    
+  }  
+}
