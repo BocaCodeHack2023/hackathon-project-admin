@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import Dashboard from './pages/Dashboard';
-import LoginPage from './pages/login';
-import EmployeeProfile from './pages/EmployeeProfile';
+import { Login, Dashboard, EmployeeProfile, Reports } from '../src/utils/Pages.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/App.css';
 
@@ -13,9 +11,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<Login />} />
+
         <Route path="/dashboard" element={<Dashboard showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>} />
         <Route path="/dashboard/:employeeId" element={<EmployeeProfile showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
+
+        <Route path="/reports" element={<Reports showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>} />
         {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
     </BrowserRouter>

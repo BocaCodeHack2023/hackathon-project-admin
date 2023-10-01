@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import '../styles/loginStyles.css';
 
 
-export default function LoginPage() {
+export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   function handleToggleShowPassword() {
