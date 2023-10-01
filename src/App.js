@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './styles/App.css';
+import { useState } from 'react';
 import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/login';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { createContext, useState } from 'react';
 import EmployeeProfile from './pages/EmployeeProfile';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/App.css';
 
 
 function App() {
-  const [ user, setUserState ] = useState()
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
