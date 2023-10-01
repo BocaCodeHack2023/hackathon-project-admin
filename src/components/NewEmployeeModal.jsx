@@ -86,7 +86,7 @@ export default function NewEmployeeModal({ handleOpen, handleClose, setEmployeeL
           <div className="form-group">
             <label>Sex</label>
             <select id='gender' onChange={updateForm} className="form-control" >
-              <option value="select" disabled>Select</option>
+              <option value="select">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
@@ -96,7 +96,6 @@ export default function NewEmployeeModal({ handleOpen, handleClose, setEmployeeL
             <input id="insurance_provider" onChange={updateForm} type="text" className="form-control" placeholder="Insurance Provider" />
           </div>
         </form>
-        {console.log(formData)}
         </Modal.Body>
 
         <Modal.Footer>
