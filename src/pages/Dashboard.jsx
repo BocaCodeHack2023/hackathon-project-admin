@@ -3,6 +3,7 @@ import EmployeeTable from "../components/EmployeeTable";
 import Sidebar from "../components/Sidebar.jsx";
 import "../styles/dashboard.css";
 import HTTP from "../utils/http.js";
+import ScreeningChart from "../components/ScreeningChart";
 
 export default function Dashboard({ showSidebar, setShowSidebar }) {
   const [employeeList, setEmployeeList] = useState([]);
@@ -19,8 +20,9 @@ export default function Dashboard({ showSidebar, setShowSidebar }) {
   return (
     <>
       <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
-      <div className={`${!showSidebar ? "marginHidden" : "marginShown" }`}>
+      <div className={`${!showSidebar ? "marginHidden" : "marginShown" } mt-5`}>
         <EmployeeTable employeeList={employeeList} setEmployeeList={setEmployeeList}/>
+        <ScreeningChart />
       </div>
     </>
   );

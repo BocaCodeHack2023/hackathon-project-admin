@@ -3,12 +3,26 @@
   border: 2px solid rgb(203, 203, 203);
   border-radius: 5px;
   font-size: 18px;
-  overflow-x: auto;
+}
+
+.tableHeader {
+  color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: sticky;
+  top: 0;
 }
 
 .tableComplete {
-  min-width: 50%;
-  width: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.tableContainer {
+  max-height: 400px; /* Set the height of the scrollable area */
+  overflow-y: auto;
 }
 
 .searchBox {
