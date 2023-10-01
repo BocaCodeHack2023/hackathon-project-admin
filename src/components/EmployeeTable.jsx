@@ -56,8 +56,6 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
                         <th scope="row">{employee.employee_id}</th>
                         <td className='employeeTableRow'>{employee.name} {employee.last_name}</td>
                         <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
-                        <td className='employeeTableRow'>
-                        </td>
                       </tr>
                     ))
                   : employeeList
@@ -70,9 +68,6 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
                           <td className='employeeTableRow'>{employee.name}</td>
                           <td className='employeeTableRow'>{employee.last_name}</td>
                           <td className='employeeTableRow'>{formatDate(employee.last_screening)}</td>
-                          <td className='employeeTableRow'>
-                            <a href={`/dashboard/${employee._id}`}>Details</a>
-                          </td>
                         </tr>
                       ))}
               </tbody>
