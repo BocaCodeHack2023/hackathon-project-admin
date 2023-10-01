@@ -9,20 +9,9 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
   const handleOpen = () => { setOpen(true) };
   const handleClose = () => { setOpen(false) };
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_ENDPOINT}/users`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setEmployeeList(data));
-  }, []);
-
   return (
-    <>
-      <h1 className="dashboardTitle">Welcome, (admin name)</h1>
+    <> 
+      <h1 className="dashboardTitle">Welcome, Idan</h1>
       <div className="d-flex justify-content-center mt-5">
         <div className="tableComplete">
           <div className="d-flex justify-content-between">
@@ -81,7 +70,7 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
           </table>
         </div>
       </div>
-      {open && <NewEmployeeModal handleOpen={handleOpen} handleClose={handleClose} />}
+      {open && <NewEmployeeModal handleOpen={handleOpen} handleClose={handleClose} setEmployeeList={setEmployeeList}/> }
     </>
   )
 }
