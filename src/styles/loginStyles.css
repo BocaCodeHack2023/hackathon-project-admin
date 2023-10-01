@@ -1,0 +1,11 @@
+#loginbg {
+  width: 100%;
+  height: 100%;
+  background-color: #e6e6e5;
+}
+
+#loginForm{
+  background-color: #f9f9f9;
+  padding: 2vw;
+  border-radius: 3%;
+}
