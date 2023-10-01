@@ -16,7 +16,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>} />
         <Route path="/dashboard/:employeeId" element={<EmployeeProfile showSidebar={showSidebar} setShowSidebar={setShowSidebar} />} />
 
-        <Route path="/reports" element={<Reports showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>} />
+        <Route path="/reports" element={<Reports showSidebar={showSidebar} setShowSidebar={setShowSidebar} setUserId/>} />
         {/* <Route path="*" element={<Err404 />} /> */}
       </Routes>
     </BrowserRouter>
