@@ -2,21 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap"
 import Sidebar from "../components/Sidebar";
+import HTTP from "../utils/http";
 
 export default function EmployeeProfile({ showSidebar, setShowSidebar }) {
   const { employeeId } = useParams();
   const [employee, setEmployee] = useState([]);
   
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${employeeId}`, {
+    HTTP({
+      url: `/users/${employeeId}`,
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
     })
-      .then((response) => response.json())
+      .then((res) => res.data)
       .then((data) => setEmployee(data));
-  }, [employeeId]);
+  }, []);
 
   const originalDateString = employee.dob;
   const date = new Date(originalDateString);
