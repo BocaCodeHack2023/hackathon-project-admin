@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import '../styles/dashboard.css'
+import NewEmployeeModal from './NewEmployeeModal';
 
 export default function EmployeeTable({ employeeList, setEmployeeList }) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => { setOpen(true) };
+  const handleClose = () => { setOpen(false) };
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_ENDPOINT}/users`, {
@@ -22,7 +27,7 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
         <div className="tableComplete">
           <div className="d-flex justify-content-between">
             <input className='searchBox' type='text' placeholder='Search' onChange={(e) => setSearchQuery(e.target.value)}/>
-            <button className='addButton'>Add +</button>
+            <button className='addButton' onClick={handleOpen}>Add +</button>
           </div>
           <table className="table employeeTable">
             <thead>
@@ -71,6 +76,7 @@ export default function EmployeeTable({ employeeList, setEmployeeList }) {
           </table>
         </div>
       </div>
+      {open && <NewEmployeeModal handleOpen={handleOpen} handleClose={handleClose}/> }
     </>
   )
 }

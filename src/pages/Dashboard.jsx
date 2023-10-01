@@ -2,18 +2,17 @@ import { useEffect, useState } from "react";
 import EmployeeTable from "../components/EmployeeTable";
 import Sidebar from "../components/Sidebar.jsx";
 import "../styles/dashboard.css";
+import HTTP from "../utils/http.js";
 
 export default function Dashboard({ showSidebar, setShowSidebar }) {
   const [employeeList, setEmployeeList] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users`, {
+    HTTP({ 
+      url: "/users",
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
     })
-      .then((response) => response.json())
+      .then((res) => res.data)
       .then((data) => setEmployeeList(data));
   }, []);
 
