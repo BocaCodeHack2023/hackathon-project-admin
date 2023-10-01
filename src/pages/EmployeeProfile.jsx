@@ -55,7 +55,7 @@ export default function EmployeeProfile() {
         <h1>Medical Information </h1>
         <Row className="border border-black ">
           <Col className="border border-black"><h2 className=" m-4">Date of Birth: {formattedDate}</h2></Col>
-          <Col className="border border-black"><h2 className="w-50 m-4">Gender: {employee.gender}</h2></Col>
+          <Col className="border border-black"><h2 className="w-50 m-4">Sex: {employee.gender}</h2></Col>
         </Row>
         <Row className="border border-black ">
 
